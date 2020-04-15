@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="HTML5选择器"><meta name="keywords" content="html"><meta name="author" content="踏浪"><meta name="copyright" content="踏浪"><meta name="google-site-verification" content="9yQKCditbXpx0d4kb3-ZBnz5x88H0Q2b2arCt_rSP4w"><meta name="baidu-site-verification" content="R8n93qV3hH"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-141130158-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-141130158-1'，{ 'optimize_id': 'GTM-MRHV7JS'});</script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();
+</script><title>HTML5选择器 | 踏浪 - 前端技术分享</title><link rel="shortcut icon" href="/img/favicon-32x32.png"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css"><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.js" defer></script><link rel="dns-prefetch" href="https://www.google-analytics.com"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-141130158-1', 'auto');
+ga('require', 'GTM-MRHV7JS');
+ga('send', 'pageview');</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"7E70L82AL9","apiKey":"dafa357aaa50e7d9460158e4eb49cc90","indexName":"gitBlog","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容:${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS选择器回顾"><span class="toc-number">1.</span> <span class="toc-text">CSS选择器回顾</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS新增选择器"><span class="toc-number">2.</span> <span class="toc-text">CSS新增选择器</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.jpg"></div><div class="author-info__name text-center">踏浪</div><div class="author-info__description text-center">踏浪个人博客 -- 用代码震撼世界</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">66</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">38</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">3</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">友情链接</div><a class="author-info-links__name text-center" href="http://www.dreamwq.com">Mr.W</a><a class="author-info-links__name text-center" href="https://blog.cnbuilder.cn/">猿码优创</a><a class="author-info-links__name text-center" href="https://mazongdiulejinguzhou.github.io/">马总丢了紧箍咒</a><a class="author-info-links__name text-center" href="https://www.qqdeveloper.com/">浪子编程走四方</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/img/top-img.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">踏浪 - 前端技术分享</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a><a class="site-page" href="/">主页</a><a class="site-page" href="/archives">文章</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a><a class="site-page" href="/tags/Flutter">Flutter</a></span></div><div id="post-info"><div id="post-title">HTML5选择器</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-12-27</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/技术/">技术</a><div class="post-meta-wordcount"><span>字数总计: </span><span class="word-count">867</span><span class="post-meta__separator">|</span><span>阅读时长: 3 分钟</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="CSS选择器回顾"><a href="#CSS选择器回顾" class="headerlink" title="CSS选择器回顾"></a>CSS选择器回顾</h2><ul>
+<li>ID选择器</li>
+<li>类名选择器：多类（.class1.class2）不被<code>ie6</code>支持</li>
+<li>标签（元素）选择器</li>
+<li>组合（后代）选择器</li>
+<li>通配符选择器</li>
+<li>直接子元素选择器 <code>&gt;</code>：<code>ie6</code>不支持</li>
+<li>相邻兄弟选择器 <code>+</code>：<code>ie6</code>不支持</li>
+<li>属性选择器</li>
+<li>伪元素选择器<br><img src="https://user-gold-cdn.xitu.io/2018/11/22/1673950ee03ea697?w=401&amp;h=136&amp;f=jpeg&amp;s=12837" alt="enter image description here"></li>
+<li>伪类选择器<br><img src="https://user-gold-cdn.xitu.io/2018/11/22/1673950ee15ac671?w=431&amp;h=214&amp;f=jpeg&amp;s=22986" alt="enter image description here"></li>
+</ul>
+<h2 id="CSS新增选择器"><a href="#CSS新增选择器" class="headerlink" title="CSS新增选择器"></a>CSS新增选择器</h2><ol>
+<li>通用兄弟（关联）选择器：<code>~</code>，选择后面的所有的子元素</li>
+<li>属性选择器（新增的）：<ul>
+<li><strong><code>E[attr~=&quot;value&quot;]</code></strong>：指定属性名，并且具有属性值，此属性值是一个词列表，并且以空格隔开，其中词列表中包含了一个value词，而且等号前面的“〜”不能不写；</li>
+<li><strong><code>E[attr^=&quot;value&quot;]</code></strong>：指定了属性名，并且有属性值，属性值是以value开头的；</li>
+<li><strong><code>E[attr$=&quot;value&quot;]</code></strong>：指定了属性名，并且有属性值，而且属性值是以value结束的；</li>
+<li><strong><code>E[attr*=&quot;value&quot;]</code></strong>：指定了属性名，并且有属性值，而且属值中包含了value；</li>
+<li><strong><code>E[attr|=&quot;value&quot;]</code></strong>：指定了属性名，并且属性值是value或者以“value-”开头的值（比如说zh-cn）;</li>
+<li><code>注意：IE6不支持所有的属性选择器</code></li>
+</ul>
+</li>
+<li><p><code>:nth</code>选择器</p>
+<ul>
+<li><strong>:first-child</strong> 选择某个元素的第一个子元素；</li>
+<li><strong>:last-child</strong> 选择某个元素的最后一个子元素；</li>
+<li><p><strong>:nth-child()</strong> 选择某个元素的一个或多个特定的子元素；</p>
+<pre><code> :nth-child(length);/*参数是具体数字*/
+:nth-child(n);/*参数是n,n从0开始计算*/
+:nth-child(n*length)/*n的倍数选择，n从0开始算*/
+:nth-child(n+length);/*选择大于length后面的元素*/
+:nth-child(-n+length)/*选择小于length前面的元素*/
+:nth-child(n*length+1);/*表示隔几选一*/
+//上面length为整数
+</code></pre></li>
+<li><p><strong>:nth-last-child()</strong> 选择某个元素的一个或多个特定的子元素，从这个元素的最后一个子元素开始算；</p>
+<pre><code>其实这种使用和:nth-child使用是一样的，也可以使用:nth-child的那些表达式和使用方法，唯一不同的是这种指定了元素的类型而以。
+</code></pre></li>
+<li><p><strong>:nth-of-type()</strong> 选择指定的元素；</p>
+</li>
+<li><strong>:nth-last-of-type()</strong> 选择指定的元素，从元素的最后一个开始计算；</li>
+<li><strong>:first-of-type</strong> 选择一个上级元素下的第一个同类子元素；</li>
+<li><strong>:last-of-type</strong> 选择一个上级元素的最后一个同类子元素；</li>
+<li><strong>:only-child</strong> 选择的元素是它的父元素的唯一一个了元素；</li>
+<li><strong>:only-of-type</strong> 选择一个元素是它的上级元素的唯一一个相同类型的子元素</li>
+<li><strong>:empty</strong> 选择的元素里面没有任何内容</li>
+<li><strong>:not</strong> 否定选择器</li>
+</ul>
+</li>
+<li><p>UI元素状态伪类<br>我们把<code>&quot;:enabled&quot;,&quot;:disabled&quot;,&quot;:checked&quot;</code>伪类称为UI元素状态伪类，这些主要是针对于HTML中的Form元素操作，最常见的比如我们<strong>“type=”text”</strong>有enable和disabled两种状态，前者为可写状态后者为不可状态；另外<strong>“type=”radio”</strong>和<strong>“type=”checkbox”</strong>有”checked”和”unchecked”两种状态。来看两个实例，比如说你想将”disabled”的文本框与别的文本框区别出来，你就可以这样应用</p>
+<pre><code>input[type=&quot;text&quot;]:disabled {border:1px solid #999;background-color: #fefefe;}
+</code></pre></li>
+</ol>
+<p><strong><code>注意：IE6-8不支持&quot;:checked&quot;,&quot;:enabled&quot;,&quot;:disabled&quot;这三种选择器。著作权归作者所有。</code></strong></p>
+<ol start="5">
+<li>伪元素新增</li>
+</ol>
+<ul>
+<li><code>::selection</code> 选择被用户选中的input：注意是选中，不是获得焦点</li>
+</ul>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">踏浪</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.lyt007.cn/技术/HTML5选择器.html">https://blog.lyt007.cn/技术/HTML5选择器.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.lyt007.cn">踏浪 - 前端技术分享</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/html/">html</a></div><div class="post-qr-code"><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/alipay.jpg"><div class="post-qr-code__desc">支付宝</div></div><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/wechatpay.png"><div class="post-qr-code__desc">微信打赏</div></div></div><div class="addthis_inline_share_toolbox pull-right"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cdd1b7c28eeaa67" async></script><nav id="pagination"><div class="prev-post pull-left"><a href="/技术/CSSS3背景.html"><i class="fa fa-chevron-left">  </i><span>CSS3背景</span></a></div><div class="next-post pull-right"><a href="/技术/HTML5语法-标签-属性.html"><span>HTML5语法,标签,属性</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="lv-container" data-id="city" data-uid="MTAyMC80MzU5OC8yMDEzNw=="><script>(function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+})(document, 'script');</script></div></div></div><footer class="footer-bg" style="background-image: url(/img/top-img.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2018 - 2020 By 踏浪</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="footer_custom_text">蜀ICP备19000202号</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div><script>var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1271259829'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1271259829%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script src="/js/search/algolia.js"></script><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+}</script><div class="search-dialog" id="algolia-search"><div class="search-dialog__title" id="algolia-search-title">Algolia</div><div id="algolia-input-panel"><div id="algolia-search-input"></div></div><hr><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-stats"></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

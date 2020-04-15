@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="HTML5响应式布局"><meta name="keywords" content="html"><meta name="author" content="踏浪"><meta name="copyright" content="踏浪"><meta name="google-site-verification" content="9yQKCditbXpx0d4kb3-ZBnz5x88H0Q2b2arCt_rSP4w"><meta name="baidu-site-verification" content="R8n93qV3hH"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-141130158-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-141130158-1'，{ 'optimize_id': 'GTM-MRHV7JS'});</script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();
+</script><title>HTML5响应式布局 | 踏浪 - 前端技术分享</title><link rel="shortcut icon" href="/img/favicon-32x32.png"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css"><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.js" defer></script><link rel="dns-prefetch" href="https://www.google-analytics.com"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-141130158-1', 'auto');
+ga('require', 'GTM-MRHV7JS');
+ga('send', 'pageview');</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"7E70L82AL9","apiKey":"dafa357aaa50e7d9460158e4eb49cc90","indexName":"gitBlog","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容:${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是响应式网页设计（布局）"><span class="toc-number">1.</span> <span class="toc-text">什么是响应式网页设计（布局）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#响应式布局的实现"><span class="toc-number">2.</span> <span class="toc-text">响应式布局的实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Meta标签定义"><span class="toc-number">2.1.</span> <span class="toc-text">1. Meta标签定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-使用Media-Queries适配对应样式"><span class="toc-number">2.2.</span> <span class="toc-text">2.使用Media Queries适配对应样式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#设备类型"><span class="toc-number">2.2.1.</span> <span class="toc-text">设备类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#设备特性"><span class="toc-number">2.2.2.</span> <span class="toc-text">设备特性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现响应式布局"><span class="toc-number">2.3.</span> <span class="toc-text">实现响应式布局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#响应式布局缺点和优点"><span class="toc-number">2.4.</span> <span class="toc-text">响应式布局缺点和优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#这里有一个很严重的缺点"><span class="toc-number">2.5.</span> <span class="toc-text">这里有一个很严重的缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方案：-lt-picture-gt"><span class="toc-number">2.6.</span> <span class="toc-text">解决方案：&lt;picture&gt;</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.jpg"></div><div class="author-info__name text-center">踏浪</div><div class="author-info__description text-center">踏浪个人博客 -- 用代码震撼世界</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">66</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">38</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">3</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">友情链接</div><a class="author-info-links__name text-center" href="http://www.dreamwq.com">Mr.W</a><a class="author-info-links__name text-center" href="https://blog.cnbuilder.cn/">猿码优创</a><a class="author-info-links__name text-center" href="https://mazongdiulejinguzhou.github.io/">马总丢了紧箍咒</a><a class="author-info-links__name text-center" href="https://www.qqdeveloper.com/">浪子编程走四方</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/img/top-img.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">踏浪 - 前端技术分享</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a><a class="site-page" href="/">主页</a><a class="site-page" href="/archives">文章</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a><a class="site-page" href="/tags/Flutter">Flutter</a></span></div><div id="post-info"><div id="post-title">HTML5响应式布局</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-12-27</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/技术/">技术</a><div class="post-meta-wordcount"><span>字数总计: </span><span class="word-count">1.4k</span><span class="post-meta__separator">|</span><span>阅读时长: 5 分钟</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="什么是响应式网页设计（布局）"><a href="#什么是响应式网页设计（布局）" class="headerlink" title="什么是响应式网页设计（布局）"></a>什么是响应式网页设计（布局）</h2><p><strong><code>响应式网页设计</code></strong>(Responsive Web design，通常缩写为RWD)是指：页面的设计与开发应当根据用户行为以及设备环境(系统平台、屏幕尺寸、屏幕定向等)进行相应的响应和调整。可以说是一种网页设计的技术做法，该设计可使网站在多种浏览设备（从桌面电脑显示器到移动电话或其他移动产品设备）上阅读和导航，同时减少缩放、平移和滚动。<br><code>响应式网页设计就是一个网站能够兼容多个终端——而不是为每个终端做一个特定的版本。</code></p>
+<h2 id="响应式布局的实现"><a href="#响应式布局的实现" class="headerlink" title="响应式布局的实现"></a>响应式布局的实现</h2><h3 id="1-Meta标签定义"><a href="#1-Meta标签定义" class="headerlink" title="1. Meta标签定义"></a>1. Meta标签定义</h3><p>使用<code>viewport meta</code>标签在手机上控制布局</p>
+<pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,maximum-scale=1&quot; /&gt;
+</code></pre><p>隐藏状态栏</p>
+<pre><code>&lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;blank&quot; /&gt;
+</code></pre><p>iPhone会将看起来像是电话号码的数字添加链接，需要关闭</p>
+<pre><code>&lt;meta name=&quot;format-detection content=&quot;telephone=no&quot; /&gt;
+</code></pre><h3 id="2-使用Media-Queries适配对应样式"><a href="#2-使用Media-Queries适配对应样式" class="headerlink" title="2.使用Media Queries适配对应样式"></a>2.使用Media Queries适配对应样式</h3><p>常用于布局的CSS Media Queries</p>
+<h4 id="设备类型"><a href="#设备类型" class="headerlink" title="设备类型"></a>设备类型</h4><ul>
+<li>all 所有设备；</li>
+<li>screen 电脑显示器；</li>
+<li>int 打印用纸或打印预览视图；</li>
+<li>ndheld 便携设备；</li>
+<li>电视机类型的设备；</li>
+<li>eech 语意和音频盒成器；</li>
+<li>aille 盲人用点字法触觉回馈设备； </li>
+<li>bossed 盲文打印机；</li>
+<li>ojection 各种投影设备；</li>
+<li>tty 使用固定密度字母栅格的媒介，比如电传打字机和终端。<h4 id="设备特性"><a href="#设备特性" class="headerlink" title="设备特性"></a>设备特性</h4></li>
+<li>width 浏览器宽度；</li>
+<li>height 浏览器高度；</li>
+<li>device-width 设备屏幕分辨率的宽度值；</li>
+<li>device-height 设备屏幕分辨率的高度值；</li>
+<li>orientation 浏览器窗口的方向纵向还是横向，当窗口的高度值大于等于宽度时该特性值为portrait，否则为landscape；</li>
+<li>aspect-ratio 比例值，浏览器的纵横比；</li>
+<li>device-aspect-ratio 比例值，屏幕的纵横比。</li>
+</ul>
+<h3 id="实现响应式布局"><a href="#实现响应式布局" class="headerlink" title="实现响应式布局"></a>实现响应式布局</h3><p>通过媒体查询<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@media screen <span class="keyword">and</span> (<span class="built_in">max</span>-<span class="built_in">width</span>:<span class="number">320</span>px) &#123; &#125; </span><br><span class="line">@media screen <span class="keyword">and</span> (<span class="built_in">min</span>-<span class="built_in">width</span>:<span class="number">320</span>px) <span class="keyword">and</span> (<span class="built_in">max</span>-<span class="built_in">width</span>:<span class="number">640</span>px) &#123; &#125;</span><br><span class="line">样式表也可以引入外部的</span><br><span class="line">@<span class="keyword">import</span> url(<span class="string">"css/demo.css"</span>) screen <span class="keyword">and</span> (<span class="built_in">min</span>-<span class="built_in">width</span>:<span class="number">320</span>px) <span class="keyword">and</span> (<span class="built_in">max</span>-<span class="built_in">width</span>:<span class="number">640</span>px);</span><br><span class="line">@media screen <span class="keyword">and</span> (<span class="built_in">min</span>-<span class="built_in">width</span>:<span class="number">640</span>px) &#123; &#125;</span><br></pre></td></tr></table></figure></p>
+<p>当然，工作中是使用的外部样式表<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;link <span class="attribute">rel</span>=<span class="string">"stylesheet"</span> <span class="attribute">type</span>=<span class="string">"text/css"</span> <span class="attribute">href</span>=<span class="string">"a.css"</span>  <span class="attribute">media</span>=<span class="string">"screen and (min-width: 1000px)"</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;link <span class="attribute">rel</span>=<span class="string">"stylesheet"</span> <span class="attribute">type</span>=<span class="string">"text/css"</span> <span class="attribute">href</span>=<span class="string">"b.css"</span>  <span class="attribute">media</span>=<span class="string">"screen and (min-width: 600px) and (max-width: 1000px)"</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;link <span class="attribute">rel</span>=<span class="string">"stylesheet"</span> <span class="attribute">type</span>=<span class="string">"text/css"</span> <span class="attribute">href</span>=<span class="string">"c.css"</span>   <span class="attribute">media</span>=<span class="string">"screen and (max-width: 600px)"</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<p>也许，你需要让手机的屏幕横着，比如你在玩<code>王者荣耀</code><br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">竖屏- 屏幕宽度小于高度</span><br><span class="line">&lt;link <span class="attribute">rel</span>=<span class="string">"stylesheet"</span> <span class="attribute">media</span>=<span class="string">"all and (orientation:portrait)"</span> <span class="attribute">href</span>=<span class="string">"portrait.css"</span>&gt;</span><br><span class="line"></span><br><span class="line">横屏-屏幕宽度大于高度</span><br><span class="line">&lt;link <span class="attribute">rel</span>=<span class="string">"stylesheet"</span> <span class="attribute">media</span>=<span class="string">"all and (orientation:landscape)"</span> <span class="attribute">href</span>=<span class="string">"portrait.css"</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="响应式布局缺点和优点"><a href="#响应式布局缺点和优点" class="headerlink" title="响应式布局缺点和优点"></a>响应式布局缺点和优点</h3><ul>
+<li><p>优点：面对不同分辨率设备，灵活性强，能够快捷地解决设备显示适应问题。</p>
+</li>
+<li><p>缺点：兼容各种设备时所需工作量大、效率低下、代码累赘，会隐藏无用的元素，加载时间延长，其实这是一种折中性质的设计解决方案，由于多方面元素影响而达不到最佳效果，在一定程度上改变了网站原有的布局结构，会出现用户混淆的情况。</p>
+</li>
+</ul>
+<h3 id="这里有一个很严重的缺点"><a href="#这里有一个很严重的缺点" class="headerlink" title="这里有一个很严重的缺点"></a>这里有一个很严重的缺点</h3><p>由于PC端和移动终端访问的是同一个网站，PC端可以不计较流量限制，但是移动端不可能不计较。 </p>
+<p>这里主要是针对于<code>图片</code>的使用，为适配不同终端机型的屏幕宽度和像素密度，我们一般会使用如下方法设置图片的CSS样式：</p>
+<pre><code>&lt;style&gt;
+    img{
+        max-width:100%;
+        height:auto;
+    }
+&lt;/style&gt;
+</code></pre><p>将图片的最大宽度设置为100%，以确保图像不会超出其父级元素的宽度，如果父级元素的宽度发生改变，图片的宽度也随之改变，height：auto 可以确保图片的宽度发生改变时，图片的高度会依据自身的宽高比例进行缩放。<br>这样当我们在移动设备上访问响应式网页里的图片时，只是把图片的分辨率做了缩放，下载的还是PC端的那张大图，这样不仅浪费流量，而且浪费带宽，而且会拖慢网页的打开速度，严重影响用户的使用体验。</p>
+<h3 id="解决方案：-lt-picture-gt"><a href="#解决方案：-lt-picture-gt" class="headerlink" title="解决方案：&lt;picture&gt;"></a>解决方案：<code>&lt;picture&gt;</code></h3><p>如下栗子中针对不同屏幕宽度加载不同的图片；当页面宽度 在320px到640px之间时加载minpic.png；当页面宽度大于640px时加载middle.png</p>
+<pre><code>&lt;picture&gt;
+    &lt;source media=&quot;(min-width: 320px) and (max-width: 640px)&quot; srcset=&quot;img/minpic.png&quot;&gt;
+    &lt;source media=&quot;(min-width: 640px)&quot; srcset=&quot;img/middle.png&quot;&gt;
+    &lt;img src=&quot;img/picture.png&quot; alt=&quot;this is a picture&quot;&gt;
+&lt;/picture&gt;
+</code></pre><p>如下例子中添加了屏幕的方向作为条件；当屏幕方向为横屏方向时加载_landscape.png结尾的图片；当屏幕方向为竖屏方向时加载 _portrait.png结尾的图片；</p>
+<pre><code>&lt;picture&gt;
+    &lt;source media=&quot;(min-width: 320px) and (max-width: 640px) and (orientation: landscape)&quot; srcset=&quot;img/minpic_landscape.png&quot;&gt;
+    &lt;source media=&quot;(min-width: 320px) and (max-width: 640px) and (orientation: portrait)&quot; srcset=&quot;img/minpic_portrait.png&quot;&gt;
+    &lt;source media=&quot;(min-width: 640px) and (orientation: landscape)&quot; srcset=&quot;img/middlepic_landscape.png&quot;&gt;
+    &lt;source media=&quot;(min-width: 640px) and (orientation: portrait)&quot; srcset=&quot;img/middlepic_portrait.png&quot;&gt;
+    &lt;img src=&quot;img/picture.png&quot; alt=&quot;this is a picture&quot;&gt;
+&lt;/picture&gt;
+</code></pre></div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">踏浪</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.lyt007.cn/技术/HTML5响应式布局.html">https://blog.lyt007.cn/技术/HTML5响应式布局.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.lyt007.cn">踏浪 - 前端技术分享</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/html/">html</a></div><div class="post-qr-code"><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/alipay.jpg"><div class="post-qr-code__desc">支付宝</div></div><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/wechatpay.png"><div class="post-qr-code__desc">微信打赏</div></div></div><div class="addthis_inline_share_toolbox pull-right"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cdd1b7c28eeaa67" async></script><nav id="pagination"><div class="prev-post pull-left"><a href="/技术/SVG.html"><i class="fa fa-chevron-left">  </i><span>SVG</span></a></div><div class="next-post pull-right"><a href="/技术/css-transform.html"><span>css-transform</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="lv-container" data-id="city" data-uid="MTAyMC80MzU5OC8yMDEzNw=="><script>(function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+})(document, 'script');</script></div></div></div><footer class="footer-bg" style="background-image: url(/img/top-img.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2018 - 2020 By 踏浪</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="footer_custom_text">蜀ICP备19000202号</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div><script>var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1271259829'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1271259829%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script src="/js/search/algolia.js"></script><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+}</script><div class="search-dialog" id="algolia-search"><div class="search-dialog__title" id="algolia-search-title">Algolia</div><div id="algolia-input-panel"><div id="algolia-search-input"></div></div><hr><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-stats"></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

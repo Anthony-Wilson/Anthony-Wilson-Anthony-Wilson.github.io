@@ -1,0 +1,109 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="HTML5视频，HTML5音频，HTML5视频与音频的使用以及介绍"><meta name="keywords" content="html"><meta name="author" content="踏浪"><meta name="copyright" content="踏浪"><meta name="google-site-verification" content="9yQKCditbXpx0d4kb3-ZBnz5x88H0Q2b2arCt_rSP4w"><meta name="baidu-site-verification" content="R8n93qV3hH"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-141130158-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-141130158-1'，{ 'optimize_id': 'GTM-MRHV7JS'});</script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();
+</script><title>HTML5视频与音频 | 踏浪 - 前端技术分享</title><link rel="shortcut icon" href="/img/favicon-32x32.png"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css"><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.js" defer></script><link rel="dns-prefetch" href="https://www.google-analytics.com"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-141130158-1', 'auto');
+ga('require', 'GTM-MRHV7JS');
+ga('send', 'pageview');</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"7E70L82AL9","apiKey":"dafa357aaa50e7d9460158e4eb49cc90","indexName":"gitBlog","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容:${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#音频-audio"><span class="toc-number">1.</span> <span class="toc-text">音频    -    audio</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关于音频的格式"><span class="toc-number">1.1.</span> <span class="toc-text">关于音频的格式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ogg"><span class="toc-number">1.1.1.</span> <span class="toc-text">ogg</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mp3"><span class="toc-number">1.1.2.</span> <span class="toc-text">mp3</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#wav"><span class="toc-number">1.1.3.</span> <span class="toc-text">wav</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#acc"><span class="toc-number">1.1.4.</span> <span class="toc-text">acc</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用"><span class="toc-number">1.2.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性"><span class="toc-number">1.3.</span> <span class="toc-text">属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#HTML5-Audio-Video-方法"><span class="toc-number">1.3.1.</span> <span class="toc-text">HTML5 Audio/Video 方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTML5-Audio-Video-属性"><span class="toc-number">1.3.2.</span> <span class="toc-text">HTML5 Audio/Video 属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTML5-Audio-Video-事件"><span class="toc-number">1.3.3.</span> <span class="toc-text">HTML5 Audio/Video 事件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#利用AudioContext绘制"><span class="toc-number">1.4.</span> <span class="toc-text">利用AudioContext绘制</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.jpg"></div><div class="author-info__name text-center">踏浪</div><div class="author-info__description text-center">踏浪个人博客 -- 用代码震撼世界</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">66</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">38</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">3</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">友情链接</div><a class="author-info-links__name text-center" href="http://www.dreamwq.com">Mr.W</a><a class="author-info-links__name text-center" href="https://blog.cnbuilder.cn/">猿码优创</a><a class="author-info-links__name text-center" href="https://mazongdiulejinguzhou.github.io/">马总丢了紧箍咒</a><a class="author-info-links__name text-center" href="https://www.qqdeveloper.com/">浪子编程走四方</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/img/top-img.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">踏浪 - 前端技术分享</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a><a class="site-page" href="/">主页</a><a class="site-page" href="/archives">文章</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a><a class="site-page" href="/tags/Flutter">Flutter</a></span></div><div id="post-info"><div id="post-title">HTML5视频与音频</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-12-27</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/技术/">技术</a><div class="post-meta-wordcount"><span>字数总计: </span><span class="word-count">1.8k</span><span class="post-meta__separator">|</span><span>阅读时长: 5 分钟</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p>简单介绍<br>HTML5 对视频和音频特性规范文档的制定是被讨论最多的。除浏览器自带支持的明显好处外，评论点集中在浏览器提供商对音频/视频格式 的不同选择。如果你准备使用HTML5的</p>
+<p><strong>音频:</strong> ogg (ogg, oga), mp3, wav, AAC<br><strong>视频:</strong> ogg (ogv), H.264 (mp4)</p>
+<p>另外你还需要留意一下 Google 的 VP8 视频解码，这个将被作为一个开源格式来结束（格式选择的）纷争。HTML5 提供的一个解决方案是 ，让你可以指定多个不同格式的源文件，以便于用户浏览器选择它认识的文件。对于 &lt; IE9 和旧浏览器，你将需要一个折衷的解决方案。</p>
+<p>当你第一次尝试 HTML5 的音频/视频，你可能会想知道这些可能对你有帮助的东东：</p>
+<p>你的服务器必须支持你打算提供的音频/视频的 MIME 格式。你将需要检查一下其在本地服务器上是否被支持。</p>
+<p>如果你使用 Safari 来检测 HTML5 的音频/视频支持，需要安装 QuickTime Player，没有QuickTime Player 的 Safari 什么都不能播放。</p>
+<h2 id="音频-audio"><a href="#音频-audio" class="headerlink" title="音频    -    audio"></a>音频    -    audio</h2><h3 id="关于音频的格式"><a href="#关于音频的格式" class="headerlink" title="关于音频的格式"></a>关于音频的格式</h3><h4 id="ogg"><a href="#ogg" class="headerlink" title="ogg"></a>ogg</h4><p>Ogg全称应该是OGGVobis(oggVorbis)是一种新的音频压缩格式，类似于MP3等的音乐格式。Ogg是完全免费、开放和没 有专利限制的。OggVorbis文件的扩展名是.OGG。Ogg文件格式可以不断地进行大小和音质的改良，而不影响旧有的编码器或播放器。</p>
+<h4 id="mp3"><a href="#mp3" class="headerlink" title="mp3"></a>mp3</h4><p>MP3是一种音频压缩技术，其全称是 动态影像专家压缩标准音频层面3（Moving Picture Experts Group Audio Layer III），简称为MP3。 它被设计用来大幅度地降低音频数据量。利用 MPEG Audio Layer 3 的技术，将音乐以1:10 甚至 1:12 的压缩率，压缩成容量较小的文件，而 对于大多数用户来说重放的音质与最初的不压缩音频相比没有明显的下降。它是在1991年由位于德国埃尔朗根的研究组织Fraunhofer-Gesellschaft 的一组工程师发明和标准化的。用MP3形式存储的音乐就叫作MP3音乐，能播放MP3音乐的机器就叫作MP3播放器。</p>
+<h4 id="wav"><a href="#wav" class="headerlink" title="wav"></a>wav</h4><p>WAV为微软公司(Microsoft)开发的一种声音文件格式，它符合RIFF(Resource Interchange File Format)文件规范，用于保存Windows平台的音 频信息资源，被Windows平台及其应用程序所广泛支持，该格式也支持MSADPCM，CCITT A LAW等多种压缩运算法，支持多种音频数字，取样频率和 声道，标准格式化的WAV文件和CD格式一样，也是44.1K的取样频率，16位量化数字，因此在声音文件质量和CD相差无几！ WAV打开工具是WINDOWS 的媒体播放器。</p>
+<h4 id="acc"><a href="#acc" class="headerlink" title="acc"></a>acc</h4><p>AAC（Advanced Audio Coding），中文称为“高级音频编码”，出现于1997年，基于 MPEG-2的音频编码技术。由Fraunhofer IIS、杜比实验室 、AT&amp;T、Sony（索尼）等公司共同开发，目的是取代MP3格式。2000年，MPEG-4标准出现后，AAC 重新集成了其特性，加入了SBR技术和PS技术， 为了区别于传统的 MPEG-2 AAC 又称为 MPEG-4 AAC。</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">controls</span> <span class="attr">autoplay</span> <span class="attr">loop</span> <span class="attr">src</span>=<span class="string">"audio/after the afterparty.mp3"</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- &lt;source src="audio/after the afterparty.mp3" type=""&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><h4 id="HTML5-Audio-Video-方法"><a href="#HTML5-Audio-Video-方法" class="headerlink" title="HTML5 Audio/Video 方法"></a>HTML5 Audio/Video 方法</h4><p>addTextTrack()：向音频/视频添加新的文本轨道</p>
+<p>canPlayType()：检测浏览器是否能播放指定的音频/视频类型</p>
+<p>load()：重新加载音频/视频元素</p>
+<p>play()：开始播放音频/视频</p>
+<p>pause()：暂停当前播放的音频/视频</p>
+<h4 id="HTML5-Audio-Video-属性"><a href="#HTML5-Audio-Video-属性" class="headerlink" title="HTML5 Audio/Video 属性"></a>HTML5 Audio/Video 属性</h4><p>audioTracks：返回表示可用音轨的 AudioTrackList 对象</p>
+<p><code>autoplay：设置或返回是否在加载完成后随即播放音频/视频</code></p>
+<p>buffered：返回表示音频/视频已缓冲部分的 TimeRanges 对象</p>
+<p>`controller：返回表示音频/视频当前媒体控制器的 MediaController 对象</p>
+<p><code>controls：设置或返回音频/视频是否显示控件（比如播放/暂停等）</code><br>crossOrigin：设置或返回音频/视频的 CORS 设置</p>
+<p>currentSrc：返回当前音频/视频的 URL</p>
+<p><code>currentTime：设置或返回音频/视频中的当前播放位置（以秒计）</code></p>
+<p>defaultMuted：设置或返回音频/视频默认是否静音</p>
+<p>defaultPlaybackRate：设置或返回音频/视频的默认播放速度</p>
+<p><code>duration：返回当前音频/视频的长度（以秒计）</code></p>
+<p>ended：返回音频/视频的播放是否已结束</p>
+<p>error：返回表示音频/视频错误状态的 MediaError 对象</p>
+<p><code>loop：设置或返回音频/视频是否应在结束时重新播放</code></p>
+<p>mediaGroup：设置或返回音频/视频所属的组合（用于连接多个音频/视频元素）</p>
+<p><code>muted：设置或返回音频/视频是否静音</code></p>
+<p>networkState：返回音频/视频的当前网络状态</p>
+<p><code>paused：设置或返回音频/视频是否暂停</code></p>
+<p><code>playbackRate：设置或返回音频/视频播放的速度</code></p>
+<p>played：返回表示音频/视频已播放部分的 TimeRanges 对象</p>
+<p>preload：设置或返回音频/视频是否应该在页面加载后进行加载</p>
+<p>readyState：返回音频/视频当前的就绪状态</p>
+<p>seekable：返回表示音频/视频可寻址部分的 TimeRanges 对象</p>
+<p>seeking：返回用户是否正在音频/视频中进行查找</p>
+<p><code>src：设置或返回音频/视频元素的当前来源</code></p>
+<p>startDate：返回表示当前时间偏移的 Date 对象</p>
+<p>textTracks：返回表示可用文本轨道的 TextTrackList 对象</p>
+<p>videoTracks：返回表示可用视频轨道的 VideoTrackList 对象</p>
+<p><code>volume：设置或返回音频/视频的音量</code></p>
+<h4 id="HTML5-Audio-Video-事件"><a href="#HTML5-Audio-Video-事件" class="headerlink" title="HTML5 Audio/Video 事件"></a>HTML5 Audio/Video 事件</h4><p>abort：当音频/视频的加载已放弃时</p>
+<p>canplay：当浏览器可以播放音频/视频时</p>
+<p>canplaythrough：当浏览器可在不因缓冲而停顿的情况下进行播放时</p>
+<p>durationchange：当音频/视频的时长已更改时</p>
+<p>emptied：当目前的播放列表为空时</p>
+<p>ended：当目前的播放列表已结束时</p>
+<p>error：当在音频/视频加载期间发生错误时</p>
+<p>loadeddata：当浏览器已加载音频/视频的当前帧时</p>
+<p>loadedmetadata：当浏览器已加载音频/视频的元数据时</p>
+<p>loadstart：当浏览器开始查找音频/视频时</p>
+<p>pause：当音频/视频已暂停时</p>
+<p>play：当音频/视频已开始或不再暂停时</p>
+<p>playing：当音频/视频在已因缓冲而暂停或停止后已就绪时</p>
+<p>progress：当浏览器正在下载音频/视频时</p>
+<p>ratechange：当音频/视频的播放速度已更改时</p>
+<p>seeked：当用户已移动/跳跃到音频/视频中的新位置时</p>
+<p>seeking：当用户开始移动/跳跃到音频/视频中的新位置时</p>
+<p>stalled：当浏览器尝试获取媒体数据，但数据不可用时</p>
+<p>suspend：当浏览器刻意不获取媒体数据时</p>
+<p>timeupdate：当目前的播放位置已更改时</p>
+<p>volumechange：当音量已更改时</p>
+<p>waiting：当视频由于需要缓冲下一帧而停止</p>
+<p><code>注意：</code>为了兼容性。一般使用source标签加载多个音频</p>
+<h3 id="利用AudioContext绘制"><a href="#利用AudioContext绘制" class="headerlink" title="利用AudioContext绘制"></a>利用AudioContext绘制</h3></div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">踏浪</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.lyt007.cn/技术/HTML5视频与音频.html">https://blog.lyt007.cn/技术/HTML5视频与音频.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.lyt007.cn">踏浪 - 前端技术分享</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/html/">html</a></div><div class="post-qr-code"><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/alipay.jpg"><div class="post-qr-code__desc">支付宝</div></div><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/wechatpay.png"><div class="post-qr-code__desc">微信打赏</div></div></div><div class="addthis_inline_share_toolbox pull-right"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cdd1b7c28eeaa67" async></script><nav id="pagination"><div class="prev-post pull-left"><a href="/技术/HTML5拖拽.html"><i class="fa fa-chevron-left">  </i><span>HTML5拖拽</span></a></div><div class="next-post pull-right"><a href="/技术/SVG.html"><span>SVG</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="lv-container" data-id="city" data-uid="MTAyMC80MzU5OC8yMDEzNw=="><script>(function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+})(document, 'script');</script></div></div></div><footer class="footer-bg" style="background-image: url(/img/top-img.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2018 - 2020 By 踏浪</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="footer_custom_text">蜀ICP备19000202号</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div><script>var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1271259829'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1271259829%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script src="/js/search/algolia.js"></script><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+}</script><div class="search-dialog" id="algolia-search"><div class="search-dialog__title" id="algolia-search-title">Algolia</div><div id="algolia-input-panel"><div id="algolia-search-input"></div></div><hr><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-stats"></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

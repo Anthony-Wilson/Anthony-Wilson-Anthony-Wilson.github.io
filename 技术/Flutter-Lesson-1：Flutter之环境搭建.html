@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Flutter系列教程之Flutter环境搭建"><meta name="keywords" content="Flutter"><meta name="author" content="踏浪"><meta name="copyright" content="踏浪"><meta name="google-site-verification" content="9yQKCditbXpx0d4kb3-ZBnz5x88H0Q2b2arCt_rSP4w"><meta name="baidu-site-verification" content="R8n93qV3hH"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-141130158-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-141130158-1'，{ 'optimize_id': 'GTM-MRHV7JS'});</script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();
+</script><title>Flutter Lesson 1：Flutter之环境搭建 | 踏浪 - 前端技术分享</title><link rel="shortcut icon" href="/img/favicon-32x32.png"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css"><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.js" defer></script><link rel="dns-prefetch" href="https://www.google-analytics.com"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-141130158-1', 'auto');
+ga('require', 'GTM-MRHV7JS');
+ga('send', 'pageview');</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"7E70L82AL9","apiKey":"dafa357aaa50e7d9460158e4eb49cc90","indexName":"gitBlog","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容:${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Windows"><span class="toc-number">1.</span> <span class="toc-text">Windows</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#下载包"><span class="toc-number">1.1.</span> <span class="toc-text">下载包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置环境变量"><span class="toc-number">1.2.</span> <span class="toc-text">配置环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#运行检测"><span class="toc-number">1.3.</span> <span class="toc-text">运行检测</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mac"><span class="toc-number">2.</span> <span class="toc-text">mac</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置编辑器"><span class="toc-number">3.</span> <span class="toc-text">配置编辑器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#运行项目"><span class="toc-number">4.</span> <span class="toc-text">运行项目</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.jpg"></div><div class="author-info__name text-center">踏浪</div><div class="author-info__description text-center">踏浪个人博客 -- 用代码震撼世界</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">66</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">38</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">3</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">友情链接</div><a class="author-info-links__name text-center" href="http://www.dreamwq.com">Mr.W</a><a class="author-info-links__name text-center" href="https://blog.cnbuilder.cn/">猿码优创</a><a class="author-info-links__name text-center" href="https://mazongdiulejinguzhou.github.io/">马总丢了紧箍咒</a><a class="author-info-links__name text-center" href="https://www.qqdeveloper.com/">浪子编程走四方</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/img/top-img.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">踏浪 - 前端技术分享</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a><a class="site-page" href="/">主页</a><a class="site-page" href="/archives">文章</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a><a class="site-page" href="/tags/Flutter">Flutter</a></span></div><div id="post-info"><div id="post-title">Flutter Lesson 1：Flutter之环境搭建</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-05-12</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/技术/">技术</a><div class="post-meta-wordcount"><span>字数总计: </span><span class="word-count">1.2k</span><span class="post-meta__separator">|</span><span>阅读时长: 3 分钟</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p>就在几天前(2019年05月08日)，Google发布了新一版本的<a href="https://flutter.dev/" target="_blank" rel="noopener">Flutter</a>，同时伴随着巨大的更新。之前的Flutter顶多就是跨Android与IOS平台，现在版本的Flutter就牛逼了，还支持了web，桌面以及嵌入式</p>
+<p><img src="https://raw.githubusercontent.com/tal007/PicGo/master/082127_5lag_2720166.png" alt="Flutter"></p>
+<p><a href="http://www.ruanyifeng.com/home.html" target="_blank" rel="noopener">阮一峰老师</a>也说未来跨平台开发语言框架不再是<a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener">React Native</a>，而是Flutter，所以Flutter受到更多人的青睐，同时由于Dart语言会的人很少，所以对于大多数程序员来说，我们都是在同一起跑线上面，我也不例外。写教程的目的，一是为了能够熟悉熟悉一下Flutter，同时记录下自己的观点，二是可以为后来成提供一些用得到的东西。</p>
+<p>废话不多说，我们先来看看Flutter的开发环境搭建。</p>
+<h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><p>首先来说说使用Windows搭建怎么搭建。</p>
+<p>FLutter的环境搭建其实还是挺简单的，相比于React Native来说简直是不要不要的。</p>
+<h2 id="下载包"><a href="#下载包" class="headerlink" title="下载包"></a>下载包</h2><p>首先我们需要下载Flutter的运行包，直接去google的<a href="https://flutter.dev/docs/get-started/install/windows" target="_blank" rel="noopener">Flutter官网</a>下载就可以了。当然，你过你不能够访问google，可以去<a href="https://flutterchina.club/get-started/install/" target="_blank" rel="noopener">Flutter中文网</a>中下载。不过我建议，作为程序员，还是可以弄一个VPN。打个广告，<a href="https://www.bshl.life/auth/register?code=SKSKEFbQeuLSbmPSEYBfVEyR8NpSubu9" target="_blank" rel="noopener">冰山互联</a>还不错，5元一个月30G流量已就够了。</p>
+<p>下载完成后，建议解压解压放在C盘根目录下面，方便查找，当然你也可以放在其他目录下面，只要不是在<code>Program File(s)</code>下面就行。</p>
+<p><img src="https://raw.githubusercontent.com/tal007/PicGo/master/20190512125510.png" alt="放在C盘根目录">。</p>
+<p>打开<code>flutter</code>目录，找到<strong>flutter_console.bat</strong></p>
+<p><img src="https://raw.githubusercontent.com/tal007/PicGo/master/20190512125653.png" alt="flutter_console.bat"></p>
+<p>双击运行。</p>
+<p><img src="https://raw.githubusercontent.com/tal007/PicGo/master/20190512130027.png" alt="运行成功"></p>
+<p>这会安装一系列的依赖，如果你是国内用户而没有开VPN，那么你需要设置一下国内镜像</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">export</span> <span class="attribute">PUB_HOSTED_URL</span>=https://pub.flutter-io.cn</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">FLUTTER_STORAGE_BASE_URL</span>=https://storage.flutter-io.cn</span><br></pre></td></tr></table></figure>
+<h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><p>安装好Flutter之后，你需要设置一下环境变量。以win10为例，在Cortana中搜索环境变量，进入到环境变量，找到<code>path</code>，添加Flutter目录+<code>\flutter\bin</code></p>
+<p><img src="https://raw.githubusercontent.com/tal007/PicGo/master/20190512130312.png" alt="配置环境变量">。</p>
+<p>需要注意的是，配置完成以后，Flutter只能在Cmd以及pwoershell中生效，其他的第三方Shell例如GitBash以及Cmder等中是无效的。</p>
+<h2 id="运行检测"><a href="#运行检测" class="headerlink" title="运行检测"></a>运行检测</h2><p>打开一个新的Cmd或者powershell，运行以下命令<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">flutter doctor</span></span><br></pre></td></tr></table></figure></p>
+<p>这会检测我们的工具是否安装完成。</p>
+<p><img src="https://raw.githubusercontent.com/tal007/PicGo/master/20190512130722.png" alt="检查结果"></p>
+<p>上面图片中，我们只需要注意两点，一个是安卓SDK，一个是连接设备。至于Android Studio中的 <code>Flutter</code> 以及 <code>Dart</code> Plugin可以暂时不用管。</p>
+<p>我这里是安装成功的截图，如果你是第一次安装，那么可能会提示你安装Android SDK，所以我们需要下载安装Android Studio。</p>
+<p>下载完成后一步一步安装就行了，这将安装最新的Android SDK，Android SDK平台工具和Android SDK构建工具，这是Flutter为Android开发时所必需的。</p>
+<p>之后我们还需要安装一个模拟器设备。</p>
+<p><img src="https://raw.githubusercontent.com/tal007/PicGo/master/20190512131345.png" alt="安装模拟器"></p>
+<p>点击<code>create</code>后选择这个手机设备就可以了。</p>
+<p>上上述安装完成后可以再次执行<code>flutter doctor</code>看看安装情况。</p>
+<h1 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h1><p>其实mac的相对来说更简单一点，总的步骤与Windows上面基本一致</p>
+<ol>
+<li>下载Flutter运行包并解压到适当目录。</li>
+<li><p>配置Flutter的环境变量</p>
+<p> 当前窗口配置: <em>export PATH=<code>pwd</code>/flutter/bin:$PATH</em> </p>
+<p> 打开： <code>$HOME/.bash_profile</code></p>
+</li>
+<li><p>运行检测 <code>flutter doctor</code></p>
+</li>
+<li>安装XCode以及IOS模拟器，安装Android Studio以及模拟器</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/tal007/PicGo/master/MAC%E5%AE%89%E8%A3%85%E6%8F%90%E7%A4%BA.png" alt="MAC 需要安卓的依赖"></p>
+<p>按照上图所示，直接运行命令行即可</p>
+<h1 id="配置编辑器"><a href="#配置编辑器" class="headerlink" title="配置编辑器"></a>配置编辑器</h1><p>作为前端工程师，我一直使用的是<code>VS Code</code>，<code>VS Code</code>的配置相对简单，只需要在插件市场下载<code>Flutter</code>插件以及<code>Dart</code>插件就行。</p>
+<p>如果你是使用的 <code>Android Studio</code> 进行开发的，那么你需要在他的插件市场下载 Flutter 以及 Dart 插件，然后启动项目即可。</p>
+<p>安装<code>Flutter</code>完成后在VSCode中 <code>Ctrl+Shift+P</code> 搜索Flutter，就会出现一系列的Flutter命名</p>
+<p><img src="https://raw.githubusercontent.com/tal007/PicGo/master/20190512131835.png" alt="Ctrl+Shift+P 搜索Flutter结果"></p>
+<p>我们可以选择<code>Flutter：New Project</code>新建一个项目</p>
+<p><img src="https://raw.githubusercontent.com/tal007/PicGo/master/20190512132256.png" alt="项目结构"></p>
+<p>还有我们可以看到VSCode右下角有一个<code>No Devices</code>的标识，你可以点击</p>
+<p><img src="https://raw.githubusercontent.com/tal007/PicGo/master/20190512132354.png" alt="No Device"></p>
+<p>如果你成功的安装了安卓模拟器或者连接了真机，那么就会出俩设备供你选择。当然，你也可以选择<code>Create New</code>。</p>
+<h1 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h1><p>在VSCode中，点击左侧菜单栏的调试，在点击调试就可以开始运行项目。但首先要保证有模拟器或者真机连接。</p>
+<p><img src="https://raw.githubusercontent.com/tal007/PicGo/master/20190512132845.png" alt="运行项目"></p>
+<p>温馨提示：第一次运行有点缓慢，请耐心等待。</p>
+<p><img src="https://raw.githubusercontent.com/tal007/PicGo/master/20190512133802.png" alt="运行结果"></p>
+<p>至此，项目环境已经搭建完成，后续知识请在后续章节中查看，谢谢。</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">踏浪</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.lyt007.cn/技术/Flutter-Lesson-1：Flutter之环境搭建.html">https://blog.lyt007.cn/技术/Flutter-Lesson-1：Flutter之环境搭建.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.lyt007.cn">踏浪 - 前端技术分享</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Flutter/">Flutter</a></div><div class="post-qr-code"><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/alipay.jpg"><div class="post-qr-code__desc">支付宝</div></div><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/wechatpay.png"><div class="post-qr-code__desc">微信打赏</div></div></div><div class="addthis_inline_share_toolbox pull-right"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cdd1b7c28eeaa67" async></script><nav id="pagination"><div class="prev-post pull-left"><a href="/技术/Flutter-Lesson-2：Dart-语法简单介绍.html"><i class="fa fa-chevron-left">  </i><span>Flutter Lesson 2: Dart 语法简单介绍</span></a></div><div class="next-post pull-right"><a href="/技术/关于网站左右布局适配.html"><span>关于网站左右布局适配</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="lv-container" data-id="city" data-uid="MTAyMC80MzU5OC8yMDEzNw=="><script>(function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+})(document, 'script');</script></div></div></div><footer class="footer-bg" style="background-image: url(/img/top-img.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2018 - 2020 By 踏浪</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="footer_custom_text">蜀ICP备19000202号</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div><script>var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1271259829'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1271259829%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script src="/js/search/algolia.js"></script><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+}</script><div class="search-dialog" id="algolia-search"><div class="search-dialog__title" id="algolia-search-title">Algolia</div><div id="algolia-input-panel"><div id="algolia-search-input"></div></div><hr><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-stats"></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>

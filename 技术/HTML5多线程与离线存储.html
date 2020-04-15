@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="HTML5离线存储，前端离线存储，网页离线存储，离线存储"><meta name="keywords" content="html"><meta name="author" content="踏浪"><meta name="copyright" content="踏浪"><meta name="google-site-verification" content="9yQKCditbXpx0d4kb3-ZBnz5x88H0Q2b2arCt_rSP4w"><meta name="baidu-site-verification" content="R8n93qV3hH"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-141130158-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-141130158-1'，{ 'optimize_id': 'GTM-MRHV7JS'});</script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();
+</script><title>HTML5多线程与离线存储 | 踏浪 - 前端技术分享</title><link rel="shortcut icon" href="/img/favicon-32x32.png"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.css"><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.js" defer></script><link rel="dns-prefetch" href="https://www.google-analytics.com"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-141130158-1', 'auto');
+ga('require', 'GTM-MRHV7JS');
+ga('send', 'pageview');</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"7E70L82AL9","apiKey":"dafa357aaa50e7d9460158e4eb49cc90","indexName":"gitBlog","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容:${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#多线程-Worker"><span class="toc-number">1.</span> <span class="toc-text">多线程 Worker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#离线存储"><span class="toc-number">2.</span> <span class="toc-text">离线存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#更新缓存"><span class="toc-number">2.1.</span> <span class="toc-text">更新缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意事项"><span class="toc-number">2.2.</span> <span class="toc-text">注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#同域跨文档操作（服务器下运行）"><span class="toc-number">3.</span> <span class="toc-text">同域跨文档操作（服务器下运行）</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.jpg"></div><div class="author-info__name text-center">踏浪</div><div class="author-info__description text-center">踏浪个人博客 -- 用代码震撼世界</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">66</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">38</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">3</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">友情链接</div><a class="author-info-links__name text-center" href="http://www.dreamwq.com">Mr.W</a><a class="author-info-links__name text-center" href="https://blog.cnbuilder.cn/">猿码优创</a><a class="author-info-links__name text-center" href="https://mazongdiulejinguzhou.github.io/">马总丢了紧箍咒</a><a class="author-info-links__name text-center" href="https://www.qqdeveloper.com/">浪子编程走四方</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/img/top-img.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">踏浪 - 前端技术分享</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a><a class="site-page" href="/">主页</a><a class="site-page" href="/archives">文章</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a><a class="site-page" href="/tags/Flutter">Flutter</a></span></div><div id="post-info"><div id="post-title">HTML5多线程与离线存储</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-12-27</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/技术/">技术</a><div class="post-meta-wordcount"><span>字数总计: </span><span class="word-count">799</span><span class="post-meta__separator">|</span><span>阅读时长: 2 分钟</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="多线程-Worker"><a href="#多线程-Worker" class="headerlink" title="多线程 Worker"></a>多线程 Worker</h2><ol>
+<li>前端页面<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建对象</span></span><br><span class="line"><span class="keyword">var</span> w = <span class="keyword">new</span> Worker(<span class="string">"work.js"</span>);</span><br><span class="line">w.postmessage(<span class="string">"发送的数据"</span>);</span><br><span class="line">w.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">	<span class="comment">// do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>2.多线程处理页面<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">self.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">	<span class="comment">// 前端页面传过来的数据</span></span><br><span class="line">	<span class="built_in">console</span>.log(e.data)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="离线存储"><a href="#离线存储" class="headerlink" title="离线存储"></a>离线存储</h2><p>使用 HTML5，通过创建 cache manifest 文件，可以轻松地创建 web 应用的离线版本。<br>HTML5引入了应用程序缓存，这意味着 web 应用可进行缓存，并可在没有因特网连接时进行访问。 应用程序缓存为应用带来三个优势：</p>
+<ul>
+<li>离线浏览 – 用户可在应用离线时使用它们</li>
+<li>速度 – 已缓存资源加载得更快</li>
+<li>减少服务器负载 – 浏览器将只从服务器下载更新过或更改过的资源。</li>
+</ul>
+<hr>
+<ol>
+<li>新建一个 <code>.appcache</code> 文件，html文件的html标签中引入这个文件</li>
+<li>在<code>apache</code>的<strong>httpd.conf</strong>文件下添加 <code>AddType text/cache-manifest .appcache</code></li>
+<li>在<code>.appcache</code>文件下进行设置：</li>
+</ol>
+<blockquote>
+<p>manifest 文件是简单的文本文件，它告知浏览器被缓存的内容（以及不缓存的内容）。manifest 文件可分为三个部分：</p>
+<ol>
+<li>CACHE MANIFEST - 在此标题下列出的文件将在首次加载后进行缓存</li>
+<li>NETWORK - 在此标题下列出的文件需要与服务器的连接，且不会被缓存</li>
+<li>FALLBACK - 在此标题下列出的文件规定当页面无法访问时的回退页面（比如 404 页面）</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>在线的情况下,用户代理每次访问页面，都会去读一次manifest.如果发现其改变, 则重新加载全部清单中的资源</p>
+</blockquote>
+<h3 id="更新缓存"><a href="#更新缓存" class="headerlink" title="更新缓存"></a>更新缓存</h3><p>一旦应用被缓存，它就会保持缓存直到发生下列情况：<br>用户清空浏览器缓存<br>manifest 文件被修改（包括注释）<br>由程序来更新应用缓存</p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li>站点离线存储的容量限制是5M</li>
+<li>如果manifest文件，或者内部列举的某一个文件不能正常下载，整个更新过程将视为失败，浏览器继续全部使用老的缓存</li>
+<li>引用manifest的html必须与manifest文件同源，在同一个域下</li>
+<li>在manifest中使用的相对路径，相对参照物为manifest文件</li>
+<li>CACHE MANIFEST字符串应在第一行，且必不可少</li>
+<li>系统会自动缓存引用清单文件的 HTML 文件</li>
+<li>manifest文件中CACHE则与NETWORK，FALLBACK的位置顺序没有关系，如果是隐式声明需要在最前面</li>
+<li>FALLBACK中的资源必须和manifest文件同源</li>
+<li>当一个资源被缓存后，该浏览器直接请求这个绝对路径也会访问缓存中的资源。</li>
+<li>站点中的其他页面即使没有设置manifest属性，请求的资源如果在缓存中也从缓存中访问</li>
+<li>当manifest文件发生改变时，资源请求本身也会触发更新</li>
+</ul>
+<h2 id="同域跨文档操作（服务器下运行）"><a href="#同域跨文档操作（服务器下运行）" class="headerlink" title="同域跨文档操作（服务器下运行）"></a>同域跨文档操作（服务器下运行）</h2><p>iframe内页：<br>    父页面操作子页面：contentWindow<br>    子页面操作父页面：window.top(找到最顶级的父页面)/parent(第一父页面)</p>
+<p>新窗口页：<br>    父页面操作子页面：window.open<br>    子页面操作父页面：window.opener</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">踏浪</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.lyt007.cn/技术/HTML5多线程与离线存储.html">https://blog.lyt007.cn/技术/HTML5多线程与离线存储.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.lyt007.cn">踏浪 - 前端技术分享</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/html/">html</a></div><div class="post-qr-code"><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/alipay.jpg"><div class="post-qr-code__desc">支付宝</div></div><div class="post-qr-code-item"><img class="post-qr-code__img" src="/img/wechatpay.png"><div class="post-qr-code__desc">微信打赏</div></div></div><div class="addthis_inline_share_toolbox pull-right"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cdd1b7c28eeaa67" async></script><nav id="pagination"><div class="prev-post pull-left"><a href="/技术/javascript函数.html"><i class="fa fa-chevron-left">  </i><span>javascript函数</span></a></div><div class="next-post pull-right"><a href="/技术/HTML5拖拽.html"><span>HTML5拖拽</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="lv-container" data-id="city" data-uid="MTAyMC80MzU5OC8yMDEzNw=="><script>(function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+})(document, 'script');</script></div></div></div><footer class="footer-bg" style="background-image: url(/img/top-img.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2018 - 2020 By 踏浪</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="footer_custom_text">蜀ICP备19000202号</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div><script>var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1271259829'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1271259829%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script src="/js/search/algolia.js"></script><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+}</script><div class="search-dialog" id="algolia-search"><div class="search-dialog__title" id="algolia-search-title">Algolia</div><div id="algolia-input-panel"><div id="algolia-search-input"></div></div><hr><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-stats"></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>
