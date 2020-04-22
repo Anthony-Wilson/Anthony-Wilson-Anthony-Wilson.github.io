@@ -2,5 +2,5 @@ https://blog.lyt007.cn/技术/react-antd-webpack4构建项目框架.html
 https://blog.lyt007.cn/技术/使用nextjs进行react项目的服务端渲染.html
 https://blog.lyt007.cn/技术/JavaScript-从使用new到手写new.html
 https://blog.lyt007.cn/技术/PM2常用命令.html
-https://blog.lyt007.cn/技术/react工程化项目搭建.html
 https://blog.lyt007.cn/技术/移动端UI框架.html
+https://blog.lyt007.cn/技术/不打算在使用BootCND.html

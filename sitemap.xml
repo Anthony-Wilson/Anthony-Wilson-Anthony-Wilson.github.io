@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.lyt007.cn/%E6%8A%80%E6%9C%AF/React-Hook.html</loc>
+    
+    <lastmod>2020-04-22T03:28:52.454Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.lyt007.cn/%E6%8A%80%E6%9C%AF/react-antd-webpack4%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6.html</loc>
     
-    <lastmod>2020-04-15T08:32:01.834Z</lastmod>
+    <lastmod>2020-04-22T03:23:06.447Z</lastmod>
     
   </url>
   
@@ -16,14 +23,14 @@
   </url>
   
   <url>
-    <loc>https://blog.lyt007.cn/links/index.html</loc>
+    <loc>https://blog.lyt007.cn/movie-book/index.html</loc>
     
     <lastmod>2020-04-13T03:13:34.979Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.lyt007.cn/movie-book/index.html</loc>
+    <loc>https://blog.lyt007.cn/links/index.html</loc>
     
     <lastmod>2020-04-13T03:13:34.979Z</lastmod>
     
@@ -72,13 +79,6 @@
   </url>
   
   <url>
-    <loc>https://blog.lyt007.cn/%E6%8A%80%E6%9C%AF/react%E5%B7%A5%E7%A8%8B%E5%8C%96%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA.html</loc>
-    
-    <lastmod>2020-04-13T03:13:34.974Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.lyt007.cn/%E6%8A%80%E6%9C%AF/%E7%A7%BB%E5%8A%A8%E7%AB%AFUI%E6%A1%86%E6%9E%B6.html</loc>
     
     <lastmod>2020-04-13T03:13:34.974Z</lastmod>
@@ -101,13 +101,6 @@
   
   <url>
     <loc>https://blog.lyt007.cn/%E6%8A%80%E6%9C%AF/PM2%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html</loc>
-    
-    <lastmod>2020-04-13T03:13:34.973Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.lyt007.cn/%E6%8A%80%E6%9C%AF/React-Hook.html</loc>
     
     <lastmod>2020-04-13T03:13:34.973Z</lastmod>
     

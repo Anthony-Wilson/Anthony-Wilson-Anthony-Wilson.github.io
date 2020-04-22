@@ -104,6 +104,7 @@
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="使用-BrowserRouter-刷新-404"><a href="#使用-BrowserRouter-刷新-404" class="headerlink" title="使用 BrowserRouter 刷新 404"></a>使用 BrowserRouter 刷新 404</h3><p>在 devServer 中 添加 <code>historyApiFallback: true</code></p>
 <h3 id="使用-webpack-alias-的时候路径提示"><a href="#使用-webpack-alias-的时候路径提示" class="headerlink" title="使用 webpack alias 的时候路径提示"></a>使用 webpack alias 的时候路径提示</h3><p>根目录添加 <code>jsconfig.json</code> 文件，与 alias 中的对应</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"compilerOptions"</span>: &#123;</span><br><span class="line">      <span class="attr">"experimentalDecorators"</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">"baseUrl"</span>: <span class="string">"./"</span>,</span><br><span class="line">      <span class="attr">"paths"</span>: &#123;</span><br><span class="line">        <span class="attr">"@/*"</span>: [<span class="string">"./src"</span>],</span><br><span class="line">        <span class="attr">"@comp/*"</span>: [<span class="string">"./src/components"</span>],</span><br><span class="line">        <span class="attr">"@img/*"</span>: [<span class="string">"./src/img"</span>],</span><br><span class="line">        <span class="attr">"@styl/*"</span>: [<span class="string">"./src/style"</span>],</span><br><span class="line">        <span class="attr">"@pages/*"</span>: [<span class="string">"./src/pages"</span>],</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"exclude"</span>: [<span class="string">"node_modules"</span>, <span class="string">"dist"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="使用git-commit-规范"><a href="#使用git-commit-规范" class="headerlink" title="使用git commit 规范"></a>使用git commit 规范</h2><p>git-commit规范可以查看<a href="https://juejin.im/post/5afc5242f265da0b7f44bee4" target="_blank" rel="noopener">优雅的提交你的 Git Commit Message</a></p>
 <p>项目地址：<a href="https://github.com/tal007/react-antd-webpack" target="_blank" rel="noopener">https://github.com/tal007/react-antd-webpack</a></p>
 ]]></content>
       <categories>
@@ -237,26 +238,6 @@
       </tags>
   </entry>
   <entry>
-    <title>react工程化项目搭建</title>
-    <url>/%E6%8A%80%E6%9C%AF/react%E5%B7%A5%E7%A8%8B%E5%8C%96%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA.html</url>
-    <content><![CDATA[<p>程序开发中，我大部分时间都是使用React开发项目。而在构建项目的时候，我为了偷懒也大部分时候都是直接使用 <a href="https://github.com/facebook/create-react-app" target="_blank" rel="noopener">create-react-app</a>。确实，这也帮了我很多的忙，省去了构建react项目的时间。</p>
-<p>但是，如果要想成为一个合格的前端开发工程师，还是有必要了解一下从零开始构建项目的流程。</p>
-<p>这里，我从以下几个板块来说明我的项目。</p>
-<ol>
-<li>管理（git, lerna, commitizen）</li>
-<li>规范（EditorConfig，Eslint，Prettier）</li>
-<li>测试（Jest）</li>
-<li>打包（Rollup）</li>
-</ol>
-<h2 id="管理"><a href="#管理" class="headerlink" title="管理"></a>管理</h2><h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><p>众所周知，分布式版本控制软件，如果你还在使用SVN托管代码，那可以考虑换一下了。</p>
-<p>使用git首先就要创建一个 <code>.gitignore</code> 命名的文件，用来忽略需要上传的文件。这里直接给大家推荐一个工具 <a href="http://gitignore.io/" target="_blank" rel="noopener">http://gitignore.io/</a>。直接所有你的项目涉及到的框架（比如react）或者使用的语言（比如Java）</p>
-<p><img src="https://pic-go-1253455210.cos.ap-chengdu.myqcloud.com/20200303230842.png" alt="搜索react"></p>
-<h3 id="lerna"><a href="#lerna" class="headerlink" title="lerna"></a>lerna</h3>]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-  </entry>
-  <entry>
     <title>移动端UI框架</title>
     <url>/%E6%8A%80%E6%9C%AF/%E7%A7%BB%E5%8A%A8%E7%AB%AFUI%E6%A1%86%E6%9E%B6.html</url>
     <content><![CDATA[<p>UI框架作为前端一门必须要了解并且熟练掌握的一门技术，关于目前不同的js框架对应的不同的框架还是有必要说说。</p>
@@ -373,6 +354,8 @@
 <p>如果你害怕你写错了，但是没有检查出来，可以使用 <a href="https://www.npmjs.com/package/eslint-plugin-react-hooks" target="_blank" rel="noopener">eslint-plugin-react-hooks</a> 这个插件来检测。</p>
 <h2 id="自定义-Hook"><a href="#自定义-Hook" class="headerlink" title="自定义 Hook"></a>自定义 Hook</h2><p>Hook 我们也是可以自定义的。那么为什么需要自定义。答案是 <strong>逻辑共享</strong>。</p>
 <p>假如有一个 state 需要在多个组件中使用，我们不应该在多个组件中都单独的去创建这个 state， 而是应该<strong>逻辑共享</strong>。把这个 state 以及操作这个 state 的方法定义在我们自己的 Hook 中。那这个 Hook 就是我们自定义的 Hook，其实，他也是一个函数，接收参数，返回你需要的值。唯一需要注意的是：<strong>自定义 Hook 必须以 <code>use</code> 开头</strong>，不管怎么变，使用需要遵循 React Hook 以 <code>use</code> 开头的规则。</p>
+<p>下面是一个获取window视窗的hook</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useState, useCallback, useEffect &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取窗口大小</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">useWinSize</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [size, setSize] = useState(&#123;</span><br><span class="line">    width: <span class="built_in">document</span>.documentElement.clientWidth,</span><br><span class="line">    height: <span class="built_in">document</span>.documentElement.clientHeight</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> onResize = useCallback(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    setSize(&#123;</span><br><span class="line">      width: <span class="built_in">document</span>.documentElement.clientWidth,</span><br><span class="line">      height: <span class="built_in">document</span>.documentElement.clientHeight</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;, []);</span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">'resize'</span>, onResize);</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">window</span>.removeEventListener(<span class="string">'resize'</span>, onResize);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;, []);</span><br><span class="line">  <span class="keyword">return</span> size;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> useWinSize;</span><br></pre></td></tr></table></figure>
 <p><a href="https://zh-hans.reactjs.org/docs/hooks-custom.html" target="_blank" rel="noopener">官网介绍</a></p>
 ]]></content>
       <categories>
